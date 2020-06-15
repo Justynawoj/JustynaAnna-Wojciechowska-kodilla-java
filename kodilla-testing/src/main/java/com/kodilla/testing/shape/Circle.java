@@ -10,11 +10,13 @@ public class Circle implements Shape{
 
     @Override
     public String getShapeName() {
-        return "Circle";
+        return "circle";
     }
 
     @Override
     public double getField() {
         return Math.PI*(radius*radius);
     }
+
+
 }

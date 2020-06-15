@@ -16,4 +16,6 @@ public class Square implements Shape{
     public double getField() {
         return side*side;
     }
+
+
 }

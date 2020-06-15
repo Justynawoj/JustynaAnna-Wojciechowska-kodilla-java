@@ -32,16 +32,23 @@ public class ShapeCollectorTestSuite {
         Circle circle = new Circle(2);
         shapeCollector.addFigure(circle);
         //When
-        Shape retrieved = shapeCollector.figures.get(0);
+        Shape retrieved = shapeCollector.getFigure(0);
         //Then
         Assert.assertEquals(circle,retrieved);
     }
     @Test
-    public void showFigureTest(){
+    public void showFiguresTest(){
         //Given
         ShapeCollector shapeCollector = new ShapeCollector();
+        Square square = new Square(2);
         Circle circle = new Circle(2);
+        Triangle triangle = new Triangle(5,4);
         //When
-
+        shapeCollector.addFigure(square);
+        shapeCollector.addFigure(circle);
+        shapeCollector.addFigure(triangle);
+        String figuresRetrieved = shapeCollector.showFigures();
+        //Then
+        Assert.assertEquals("square (4.0), circle (12.566370614359172), triangle (10.0), ", figuresRetrieved);
     }
 }
