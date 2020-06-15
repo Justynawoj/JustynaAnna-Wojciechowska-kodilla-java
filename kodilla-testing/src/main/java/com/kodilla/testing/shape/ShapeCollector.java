@@ -19,11 +19,16 @@ public class ShapeCollector {
         return figures.get(index);
     }
     public String showFigures(){
-        String allFigures = "";
+        StringBuilder sb = new StringBuilder();
+
         for (Shape figure: figures){
-            allFigures += figure.getShapeName()+" ("+figure.getField()+"), ";
+
+            sb.append(figure.getShapeName());
+            sb.append(" (");
+            sb.append(figure.getField());
+            sb.append("), ");
         }
 
-        return allFigures;
+        return sb.toString();
     }
 }

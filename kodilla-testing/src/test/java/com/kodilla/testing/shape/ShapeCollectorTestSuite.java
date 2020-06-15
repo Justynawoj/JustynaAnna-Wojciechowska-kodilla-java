@@ -11,8 +11,9 @@ public class ShapeCollectorTestSuite {
         Circle circle = new Circle(2);
         //When
         shapeCollector.addFigure(circle);
+        boolean isPresent = shapeCollector.figures.contains(circle);
         //Then
-        Assert.assertEquals(1,shapeCollector.figures.size());
+        Assert.assertTrue(isPresent);
     }
     @Test
     public void removeFigureTest(){
@@ -22,8 +23,9 @@ public class ShapeCollectorTestSuite {
         shapeCollector.addFigure(circle);
         //When
         shapeCollector.removeFigure(circle);
+        boolean isPresent = shapeCollector.figures.contains(circle);
         //Then
-        Assert.assertEquals(0,shapeCollector.figures.size());
+        Assert.assertFalse(isPresent);
     }
     @Test
     public void getFigureTest(){
@@ -33,8 +35,10 @@ public class ShapeCollectorTestSuite {
         shapeCollector.addFigure(circle);
         //When
         Shape retrieved = shapeCollector.getFigure(0);
+
         //Then
         Assert.assertEquals(circle,retrieved);
+
     }
     @Test
     public void showFiguresTest(){
