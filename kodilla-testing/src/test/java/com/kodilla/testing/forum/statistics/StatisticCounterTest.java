@@ -3,7 +3,10 @@ package com.kodilla.testing.forum.statistics;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
+import org.junit.Assert;
 import org.junit.Test;
+
+import java.util.ArrayList;
 
 public class StatisticCounterTest {
 
@@ -11,8 +14,18 @@ public class StatisticCounterTest {
     public void calculateAdvStatisticsTest() {
         //Given
         Statistics statisticsMock = mock(Statistics.class);
-        StatisticCounter statisticCounter = new StatisticCounter();
 
+
+        ArrayList<String> usersNames = new ArrayList<>();
+        for(int i=0; i<100;i++){
+            usersNames.add("user");
+        }
+        when(statisticsMock.usersNames()).thenReturn(usersNames);
+        StatisticCounter statisticCounter = new StatisticCounter();
+        //When
+        statisticCounter.calculateAdvStatistics(statisticsMock);
+        int userNamesNumer = statisticCounter.getUsersNumber();
+        Assert.assertEquals(100,userNamesNumer);
     }
 
 /*
