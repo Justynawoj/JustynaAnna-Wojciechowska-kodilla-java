@@ -1,34 +1,61 @@
 package com.kodilla.testing.forum.statistics;
 
-import java.util.List;
-
 public class StatisticCounter {
     private int usersNumber;
-    private int totalPosts;
-    private int totalComments;
-    private double usersAveragePostsQuantity;
-    private double usersAverageCommentsQuantity;
-    private double postsAverageCommentsQuantity;
+    private double totalPosts;
+    private double totalComments;
+    private double postPerUser;
+    private double commentsPerUser;
+    private double commentsPerPost;
 
     public void calculateAdvStatistics(Statistics statistics){
         this.usersNumber = statistics.usersNames().size();
         this.totalPosts = statistics.postsCount();
         this.totalComments = statistics.commentsCount();
-        if(totalPosts != 0) {
-            this.usersAveragePostsQuantity = usersNumber / totalPosts;
+        if(usersNumber != 0) {
+            this.postPerUser = totalPosts / usersNumber;
+        }else{
+            this.postPerUser = 0;
         }
-        if (totalComments != 0) {
-            this.usersAverageCommentsQuantity = usersNumber / totalComments;
-            this.postsAverageCommentsQuantity = totalPosts / totalComments;
-           }
+
+        if (usersNumber != 0) {
+            this.commentsPerUser = totalComments / usersNumber;
+           }else {
+            this.commentsPerUser = 0;
+            }
+        if(totalPosts!=0){
+            this.commentsPerPost = totalComments / totalPosts;
+        }else{
+            this.commentsPerPost = 0;
         }
+    }
 
 
     public String showStatistics(){
-        return "usersNumber "+usersNumber+"; totalComments "+ totalComments+", totalPosts "+totalPosts+ " usersAveragePostsQuantity "+usersAveragePostsQuantity+ ", usersAverageCommentsQuantity "+usersAverageCommentsQuantity+", postsAverageCommentsQuantity "+postsAverageCommentsQuantity;
+        return "usersNumber "+usersNumber+"; totalComments "+ totalComments+", totalPosts "+totalPosts+ " usersAveragePostsQuantity "+ postPerUser + ", usersAverageCommentsQuantity "+ commentsPerUser +", postsAverageCommentsQuantity "+ commentsPerPost;
     }
 
     public int getUsersNumber() {
         return usersNumber;
+    }
+
+    public double getTotalPosts() {
+        return totalPosts;
+    }
+
+    public double getTotalComments() {
+        return totalComments;
+    }
+
+    public double getPostPerUser() {
+        return postPerUser;
+    }
+
+    public double getCommentsPerUser() {
+        return commentsPerUser;
+    }
+
+    public double getCommentsPerPost() {
+        return commentsPerPost;
     }
 }

@@ -14,35 +14,42 @@ public class StatisticCounterTest {
     public void calculateAdvStatisticsTest() {
         //Given
         Statistics statisticsMock = mock(Statistics.class);
-
+        StatisticCounter statisticCounter = new StatisticCounter();
 
         ArrayList<String> usersNames = new ArrayList<>();
         for(int i=0; i<100;i++){
             usersNames.add("user");
         }
-        when(statisticsMock.usersNames()).thenReturn(usersNames);
-        StatisticCounter statisticCounter = new StatisticCounter();
+
+        //when(statisticsMock.usersNames()).thenReturn(new ArrayList<>());  //gdy liczba użytkowników = 0,
+        //when(statisticsMock.commentsCount()).thenReturn(0);                 //gdy liczba komentarzy = 0,
+        //when(statisticsMock.postsCount()).thenReturn(0);                    //gdy liczba postow = 0;
+
+        when(statisticsMock.usersNames()).thenReturn(usersNames);           // gdy liczba użytkowników = 100
+        when(statisticsMock.commentsCount()).thenReturn(1000);                 //gdy liczba komentarzy = 0,
+        when(statisticsMock.postsCount()).thenReturn(0);                 //gdy liczba postow = 1000;
+
+
         //When
         statisticCounter.calculateAdvStatistics(statisticsMock);
-        int userNamesNumer = statisticCounter.getUsersNumber();
-        Assert.assertEquals(100,userNamesNumer);
+        int userNamesNumber = statisticCounter.getUsersNumber();
+        double posts = statisticCounter.getTotalPosts();
+        double comments = statisticCounter.getTotalComments();
+        double avPostPerUser = statisticCounter.getPostPerUser();
+        double avCommentsPerPost = statisticCounter.getCommentsPerPost();
+        double avCommentsPerUser = statisticCounter.getCommentsPerUser();
+
+
+
+        //Then
+        Assert.assertEquals(100,userNamesNumber);
+        Assert.assertEquals(0,posts,0);
+        Assert.assertEquals(1000,comments, 0);
+        Assert.assertEquals(0,avPostPerUser,0);
+        Assert.assertEquals(0,avCommentsPerPost,0);
+        Assert.assertEquals(10,avCommentsPerUser,1);
+
     }
-
-/*
-*
-* gdy liczba postów = 0,
-gdy liczba postów = 1000,
-gdy liczba komentarzy = 0,
-gdy liczba komentarzy < liczba postów,
-gdy liczba komentarzy > liczba postów,
-gdy liczba użytkowników = 0,
-gdy liczba użytkowników = 100.
-*
-
-*     List<String> usersNames(); // list of users names
-    int postsCount();          // total quantity of forum posts
-    int commentsCount();       // total quantity of forum comments
- */
 
     //Given
     //When
