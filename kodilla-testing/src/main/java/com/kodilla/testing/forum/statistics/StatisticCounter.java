@@ -31,10 +31,6 @@ public class StatisticCounter {
     }
 
 
-    public String showStatistics(){
-        return "usersNumber "+usersNumber+"; totalComments "+ totalComments+", totalPosts "+totalPosts+ " usersAveragePostsQuantity "+ postPerUser + ", usersAverageCommentsQuantity "+ commentsPerUser +", postsAverageCommentsQuantity "+ commentsPerPost;
-    }
-
     public int getUsersNumber() {
         return usersNumber;
     }
