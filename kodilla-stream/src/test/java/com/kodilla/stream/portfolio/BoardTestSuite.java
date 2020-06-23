@@ -5,12 +5,8 @@ import org.junit.Test;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.time.LocalDate;
-import java.time.Month;
 import java.time.temporal.ChronoUnit;
 import java.util.OptionalDouble;
-
-import static java.util.stream.Collectors.averagingDouble;
 import static java.util.stream.Collectors.toList;
 
 public class BoardTestSuite {
@@ -146,13 +142,13 @@ public class BoardTestSuite {
         //When
         List<TaskList> inProgressTasks = new ArrayList<>();
         inProgressTasks.add(new TaskList("In progress"));
-        OptionalDouble longTasks = project.getTaskLists().stream()
+        OptionalDouble optionalDouble = project.getTaskLists().stream()
                 .filter(inProgressTasks::contains)
                 .flatMap(tl -> tl.getTasks().stream())
                 .map(t-> ChronoUnit.DAYS.between(t.getCreated(), LocalDate.now()))
                 .mapToDouble(Long::longValue).average();
 
-        double result = longTasks.getAsDouble();
+        double result = optionalDouble.getAsDouble();
 
         //Then
         Assert.assertEquals(10.0, result,0.00001);
