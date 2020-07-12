@@ -1,14 +1,10 @@
 package com.kodilla.exception.test;
 
 import java.util.HashMap;
-import java.util.Map;
-
 
 public class FlightFinder {
 
     public boolean findFlight(Flight flight) throws RouteNotFoundException{
-
-        boolean flightAvailability = false;
 
         HashMap<String, Boolean> flights = new HashMap<>();
         flights.put("WRO", true);
@@ -19,22 +15,16 @@ public class FlightFinder {
         flights.put("UDE", true);
         flights.put("KLP", false);
 
-        String searchedAirport = flight.getArrivalAirport();
-        HashMap<Flight,Boolean> flightFounded = new HashMap<>();
-
-            for(Map.Entry<String, Boolean> entry: flights.entrySet()) {
-                if (entry.getKey().equalsIgnoreCase(searchedAirport)) {
-                    flightFounded.put(new Flight("current airport",entry.getKey()),entry.getValue());
-                    }
-                }
-
-        for(Map.Entry<Flight, Boolean> entry: flightFounded.entrySet()) {
-            flightAvailability = entry.getValue();
-        }
-        if(flightFounded.size()==0){
+        Boolean departureAirportAvailable = flights.get(flight.getDepartureAirport());
+        if(departureAirportAvailable == null){
             throw new RouteNotFoundException();
         }
 
-        return flightAvailability;
+        Boolean arrivalAirportAvailable = flights.get(flight.getArrivalAirport());
+        if(arrivalAirportAvailable == null){
+            throw new RouteNotFoundException();
+        }
+
+        return departureAirportAvailable && arrivalAirportAvailable;
     }
 }

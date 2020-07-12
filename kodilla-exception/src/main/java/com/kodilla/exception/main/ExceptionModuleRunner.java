@@ -15,7 +15,7 @@ public class ExceptionModuleRunner {
 
         FlightFinder flightFinder = new FlightFinder();
         try{
-            System.out.println(flightFinder.findFlight(new Flight("KAP","sss")));
+            System.out.println(flightFinder.findFlight(new Flight("WRO","FRA")));
 
         } catch (RouteNotFoundException e){
             System.out.println("Route not found");
