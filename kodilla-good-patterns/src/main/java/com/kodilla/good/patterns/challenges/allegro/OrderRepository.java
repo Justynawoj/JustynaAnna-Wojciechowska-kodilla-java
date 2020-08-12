@@ -1,7 +1,6 @@
-package com.kodilla.good.patterns.challenges;
+package com.kodilla.good.patterns.challenges.allegro;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class OrderRepository {
