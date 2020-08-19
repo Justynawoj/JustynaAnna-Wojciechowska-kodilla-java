@@ -15,8 +15,9 @@ public class PaintingTask implements Task{
     }
 
     @Override
-    public void executeTask() {
+    public String executeTask() {
         this.isTaskExecuted = true;
+        return "Executing task - "+taskName + ". Target "+ whatToPaint + ", color "+ color;
     }
 
     @Override

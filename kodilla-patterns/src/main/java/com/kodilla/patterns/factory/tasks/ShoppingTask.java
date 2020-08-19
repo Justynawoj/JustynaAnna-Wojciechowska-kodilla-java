@@ -15,8 +15,9 @@ public class ShoppingTask implements Task{
     }
 
     @Override
-    public void executeTask() {
+    public String executeTask() {
         this.isTaskExecuted = true;
+        return "Executing task - "+taskName + ". What to buy: "+ whatToBuy + ", quantity: "+ quantity;
     }
 
     @Override

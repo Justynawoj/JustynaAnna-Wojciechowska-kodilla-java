@@ -31,6 +31,9 @@ public class TaskFactoryTestSuite {
         //Then
         Assert.assertEquals("painting door", painting.getTaskName());
         Assert.assertFalse(painting.isTaskExecuted());
+        Assert.assertEquals("Executing task - painting door. Target front door, color white",painting.executeTask());
+        painting.executeTask();
+        Assert.assertTrue(painting.isTaskExecuted());
 
     }
 
@@ -42,5 +45,9 @@ public class TaskFactoryTestSuite {
         //Then
         Assert.assertEquals("take kids to school", driving.getTaskName());
         Assert.assertFalse(driving.isTaskExecuted());
+
+        Assert.assertEquals("Executing task - take kids to school. Destination school, by car",driving.executeTask());
+        driving.executeTask();
+        Assert.assertTrue(driving.isTaskExecuted());
     }
 }
