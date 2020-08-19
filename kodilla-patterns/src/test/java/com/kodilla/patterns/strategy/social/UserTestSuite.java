@@ -10,12 +10,12 @@ public class UserTestSuite {
     public void testDefaultSharingStrategies(){
         //Given
 
-        User user1 = new ZGeneration("Kelly");
+        User user = new ZGeneration("Kelly");
         User user2 = new YGeneration("Mike");
         User user3 = new Millenials("Sue");
 
         //When
-        String user1UsesSocial = user1.socialPublisher.showSocial();
+        String user1UsesSocial = user.socialPublisher.showSocial();
         String user2UsesSocial = user2.socialPublisher.showSocial();
         String user3UsesSocial = user3.socialPublisher.showSocial();
 
@@ -28,15 +28,15 @@ public class UserTestSuite {
     @Test
     public void testIndividualSharingStrategy(){
         //Given
-        User user1 = new ZGeneration("Kelly");
-        String user1UsesSocial = user1.socialPublisher.showSocial();
+        User user = new ZGeneration("Kelly");
+        String userUsesSocial = user.socialPublisher.showSocial();
 
         //When
-        user1.setSocialPublisher(new FacebookPublisher());
-        String newUser1Social = user1.socialPublisher.showSocial();
+        user.setSocialPublisher(new FacebookPublisher());
+        String newUserSocial = user.socialPublisher.showSocial();
 
         //Then
-        Assert.assertEquals("Facebook",newUser1Social);
+        Assert.assertEquals("Facebook",newUserSocial);
 
     }
 }
