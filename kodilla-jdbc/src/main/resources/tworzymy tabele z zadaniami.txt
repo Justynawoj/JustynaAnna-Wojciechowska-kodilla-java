@@ -1,0 +1,116 @@
+CREATE TABLE ISSUESLISTS
+(
+ID SERIAL PRIMARY KEY,
+NAME CHAR(200) CHARSET utf8 NOT NULL
+);
+
+COMMIT;
+
+CREATE TABLE ISSUES
+(
+ID SERIAL PRIMARY KEY,
+ISSUESLISTS_ID BIGINT UNSIGNED NOT NULL,
+FOREIGN KEY (ISSUESLISTS_ID) REFERENCES ISSUESLISTS(ID),
+SUMMARY CHAR(200) CHARSET utf8 NOT NULL,
+DESCRIPTION VARCHAR(2000) CHARSET utf8,
+USER_ID_ASSIGNEDTO BIGINT UNSIGNED NOT NULL,
+FOREIGN KEY (USER_ID_ASSIGNEDTO) REFERENCES USERS(ID)
+);
+
+COMMIT;
+
+INSERT INTO ISSUESLISTS (NAME)
+VALUES("ToDo");
+
+INSERT INTO ISSUESLISTS (NAME)
+VALUES("In progress");
+
+INSERT INTO ISSUESLISTS (NAME)
+VALUES("Done");
+
+COMMIT;
+
+INSERT INTO ISSUES (ISSUESLISTS_ID, SUMMARY, DESCRIPTION,USER_ID_ASSIGNEDTO)
+VALUES("1","BOCZEK Z BAKŁAŻANA","Piekarnik nagrzać do 200 stopni C. Bakłażana pokroić na ok. 1/2 cm plasterki. Ułożyć na blaszce do pieczenia wyłożonej papierem do pieczenia.
+W miseczce wymieszać składniki marynaty, następnie za pomocą pędzelka posmarować bakłażana z jednej strony, następnie przełożyć na drugą stronę i ponownie posmarować marynatą. Znów przewrócić i nasączać bakłażana aż do wyczerpania marynaty.
+Wstawić do piekarnika i piec przez ok. 25 minut. W ten sposób przygotowanego bakłażana można traktować jako dodatek do kanapek np. z pomidorem, sałatą lub/i awokado oraz majonezem lub hummusem.","1");
+
+INSERT INTO ISSUES (ISSUESLISTS_ID, SUMMARY, DESCRIPTION,USER_ID_ASSIGNEDTO)
+VALUES("2","MAKARON Z KURCZAKIEM, CUKINIĄ, FETĄ","•	Nastawić osoloną wodę do ugotowania makaronu.
+•	Filet z kurczaka pokroić w kosteczkę i doprawić solą, pieprzem, startym czosnkiem, oregano. Następnie wymieszać razem z 1 łyżką oliwy (można zostawić do zamarynowania na kilka godzin jeśli mamy czas).
+•	Wrzucić makaron na gotującą się wodę i gotować aż będzie al dente.
+•	Rozgrzać większą patelnię, wlać pozostałą łyżkę oliwy i włożyć kurczaka. Obsmażyć co chwilę mieszając, przez ok. 1 - 2 minuty.
+•	Dodać cukinię pokrojoną w małą kostkę. Smażyć mieszając co chwilę przez ok. 2 - 3 minuty, aż cukinia zmięknie.
+•	Po koniec dodać pokrojone na kawałeczki suszone pomidory oraz 2 łyżki oliwy ze słoika. Doprawić świeżo zmielonym pieprzem.
+•	Na patelnię włożyć odcedzony makaron i wymieszać cały czas podgrzewając. Dodać pokrojoną w kosteczkę fetę i wymieszać. Chwilę podgrzać i odstawić z ognia. Można podawać z parmezanem.
+","2");
+
+INSERT INTO ISSUES (ISSUESLISTS_ID, SUMMARY, DESCRIPTION,USER_ID_ASSIGNEDTO)
+VALUES("3","CUKINIA ZAPIEKANA Z FETĄ","Piekarnik nagrzać do 180 stopni C. Cukinię przepołowić, łyżeczką wydrążyć i usunąć nasiona.
+Cukinię (rozcięte miejsca) doprawić solą, pieprzem, posmarować startym czosnkiem i skropić oliwą.
+Ułożyć w naczyniu żaroodpornym rozcięciem do góry i wstawić do piekarnika na 10 minut.","3");
+
+INSERT INTO ISSUES (ISSUESLISTS_ID, SUMMARY, DESCRIPTION,USER_ID_ASSIGNEDTO)
+VALUES("1","SZAKSZUKA Z KURKAMI","Pomidory sparzyć i obrać ze skórki, miąższ pokroić w kosteczkę. Kurki umyć i osuszyć.
+Na patelnię włożyć masło i posiekaną cebulkę, chwilę podsmażyć. Dodać kurki i poddusić przez 1 - 2 minuty.
+Dodać pomidory, doprawić solą, pieprzem. Wymieszać i smażyć na większym ogniu ok. 5 minut, już bez mieszania (wówczas pomidory odparują i zachowają swoją strukturę, jeśli będziemy mieszać zrobi się przecier).","4");
+
+INSERT INTO ISSUES (ISSUESLISTS_ID, SUMMARY, DESCRIPTION,USER_ID_ASSIGNEDTO)
+VALUES("2","KOTLETY JAJECZNE Z KALAFIOREM","Wegetariańskie i bezglutenowe kotlety jajeczne z kalafiorem smażone w panierze z ciecierzycy.","1");
+
+
+
+
+INSERT INTO ISSUES (ISSUESLISTS_ID, SUMMARY, DESCRIPTION,USER_ID_ASSIGNEDTO)
+VALUES("1","ZAPIEKANKA WARZYWNA","Piekarnik nagrzać do 190 stopni C. Batata obrać i pokroić w kostkę. Cukinię umyć i pokroić w nieco większą kostką.
+Cebulę obrać z zewnętrzych suchych łupin i pokroić na paseczki. Ząbki czosnku pozostawić w łupinkach.
+Warzywa doprawić pieprzem, oregano i pieprzem cayenne, następnie wymieszać z oliwą (nie solić na tym etapie, bo warzywa puszczą soki).","2");
+
+INSERT INTO ISSUES (ISSUESLISTS_ID, SUMMARY, DESCRIPTION,USER_ID_ASSIGNEDTO)
+VALUES("2","RYŻ Z TRUSKAWKAMI","W szerokim garnku roztopić masło. Dodać mleko, ryż oraz sól.
+Zagotować, zmniejszyć ogień i gotować bez przykrycia na małym ogniu przez ok. 40 minut często mieszając drewnianą łyżką.
+Na samym końcu dodać cukier wanilinowy oraz cukier i mieszać aż się rozpuści.
+Truskawki umyć, odciąć szypułki, pokroić na kawałki, następnie rozgnieść widelcem z dodatkiem cukru.
+Ryż nałożyć do miseczek i polać sosem truskawkowym.","3");
+
+INSERT INTO ISSUES (ISSUESLISTS_ID, SUMMARY, DESCRIPTION,USER_ID_ASSIGNEDTO)
+VALUES("3","SZARLOTKA JAGLANA","Przygotować prażone jabłka i wymieszać je z łyżką przyprawy do szarlotki. Przygotować formę o średnicy 26 cm. Piekarnik nagrzać do 180 stopni C.
+Mąkę jaglaną wymieszać z mąką ziemniaczaną, proszkiem do pieczenia, cukrem pudrem, cukrem wanilinowym i przyprawą do szarlotki lub cynamonem.
+Dodać pokrojone w kosteczkę zimne masło i zagnieść ciasto kruche (robotem lub w misce lub na stolnicy), rozicerając składniki na kruszonkę, a pod koniec dodając masło orzechowe jeśli je używamy oraz jajko, do połączenia składników w jednolite i gładkie ciasto.","4");
+
+INSERT INTO ISSUES (ISSUESLISTS_ID, SUMMARY, DESCRIPTION,USER_ID_ASSIGNEDTO)
+VALUES("1","BROWNIE Z FASOLI","asolę odcedzić na sitku i przepłukać wodą, odsączyć. Włożyć do melaksera lub blendera i zacząć miksować z daktylami (bez pestek), kakao, miodem, syropem klonowym oraz proszkiem do pieczenia.
+Dodać jajka i zmiksować na gładką masę, pod koniec dodając olej kokosowy i banany. Dodać posiekane suszone śliwki i wymieszać.
+Otrzymaną masę przelać do foremki o wymiarach dna ok. 20 x 23 cm i piec przez ok. 40 minut w 170 stopniach C. Wyjąć z piekarnika i ostudzić.","1");
+
+INSERT INTO ISSUES (ISSUESLISTS_ID, SUMMARY, DESCRIPTION,USER_ID_ASSIGNEDTO)
+VALUES("2","BUDDHA BOWL","Komosę wypłukać, umieścić w garnku, zalać wodą (2 cm ponad poziom komosy), doprawić solą i pieprzem i zagotować. Przykryć i gotować na małym ogniu przez czas podany na opakowaniu (od 15 do 25 min). Odparować resztę wody.
+Płatki migdałów lekko podprażyć na suchej patelni aż będą miejscami lekko zrumienione.
+Piekarnik nagrzać do 220 stopni C. Batata umyć, obrać i pokroić w kosteczkę. Doprawić połową przypraw i wymieszać z połową oliwy. Rozłożyć jedną warstwą w blaszce do pieczenia i piec przez 15 minut.","2");
+
+
+INSERT INTO ISSUES (ISSUESLISTS_ID, SUMMARY, DESCRIPTION,USER_ID_ASSIGNEDTO)
+VALUES("1","JAJKA Z CHORIZO W SOSIE POMIDOROWYM","Na patelni na małym ogniu podsmażyć pokrojone w plasterki chorizo (przez kilka minut aż wytopi się tłuszcz). Ostrożnie wlać sos pomidorowy (może pryskać) i zagotować.
+Wbić jajka i na małym ogniu gotować ok. 10 minut bez mieszania (na ostatnie 3 minuty ewentualnie przykryć pokrywką aby białka się ścięły).
+Opcjonalnie posypać płatkami chili i świeżą rukolą.","3");
+
+INSERT INTO ISSUES (ISSUESLISTS_ID, SUMMARY, DESCRIPTION,USER_ID_ASSIGNEDTO)
+VALUES("2","KANAPKA Z TUŃCZYKIEM I JAJKIEM","Jajko ugotować na półtwardo (9 minut od włożenia jajka z lodówki na gorącą wodę). Pieczywo opiec lekko w tosterze, przestudzić. Posmarować masłem.
+Ułożyć listki rukoli, kawałki tuńczyka i plasterki jajka. Polać musztardą i posypać piórkami cebuli. Doprawić solą i pieprzem. ","4");
+
+INSERT INTO ISSUES (ISSUESLISTS_ID, SUMMARY, DESCRIPTION,USER_ID_ASSIGNEDTO)
+VALUES("3","KURCZAK Z 40 ZĄBKAMI CZOSNKU","Związać nogi kurczaka (jeśli kupiony kurczak jest już związany nitkami, należy je pozostawić).
+Przygotować żaroodporny garnek (np. żeliwny, ceramiczny) lub naczynie z pokrywą, takie, które można stawiać na kuchence i gotować na ogniu. Może to też być garnek z grubym dnem, który pomieści całego kurczaka.
+Rozgrzać w nim oliwę lub olej na średnim ogniu. Włożyć kurczaka i smażyć na złoty kolor przez ok. 8 minut. Następnie przewrócić na drugą stronę i powtórzyć smażenie. Jeśli soki pryskają, można przykryć pokrywą.","1");
+
+INSERT INTO ISSUES (ISSUESLISTS_ID, SUMMARY, DESCRIPTION,USER_ID_ASSIGNEDTO)
+VALUES("1","PUDDING RYŻOWY Z CYNAMONEM","W szerokim garnku roztopić masło. Dodać mleko, ryż, sól i laskę cynamonu.
+Zagotować, zmniejszyć ogień i gotować bez przykrycia na małym ogniu przez ok. 40 minut często mieszając drewnianą łyżką.
+Na samym końcu dodać cukier i mieszać aż się rozpuści. Zdjąć z ognia, podawać posypany mielonym cynamonem.","2");
+
+INSERT INTO ISSUES (ISSUESLISTS_ID, SUMMARY, DESCRIPTION,USER_ID_ASSIGNEDTO)
+VALUES("2","KOKOSOWY RYŻ Z MANGO","Ryż dokładnie wypłukać kilkakrotnie zmieniając wodę, odsączyć. Zalać zimną wodą (1 szklanka), przykryć i gotować na małym ogniu przez ok. 10 minut. Odstawić z ognia i zostawić pod przykryciem na ok. 10 - 15 minut, aby ryż całkowicie wchłonął wodę.
+Mleko kokosowe zagotować w garnku z dodatkiem cukru i soli. 3/4 mleka wlać do ryżu i wymieszać. Resztę wymieszać z mąką ziemniaczaną (uprzednio rozprowadzić ją w 2 - 3 łyżkach zimnej wody) i zagotować. Otrzymaną polewę zachować do polania ryżu.
+Mango umyć, obrać i pokroić. Ułożyć na talerzych i skropić sokiem z limonki. Obok wyłożyć ryż (np. za pomocą filiżanki), polać sosem z mleka kokosowego i posypać sezamem. Udekorować listkami mięty.","3");
+
+COMMIT;
