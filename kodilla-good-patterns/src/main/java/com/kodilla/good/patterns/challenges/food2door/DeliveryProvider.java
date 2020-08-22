@@ -8,6 +8,8 @@ public class DeliveryProvider {
     private String emailAddress;
     private Product product;
 
+
+
     public DeliveryProvider(String companyName, long vatNumber, long phoneNumber, String emailAddress) {
         this.companyName = companyName;
         this.vatNumber = vatNumber;

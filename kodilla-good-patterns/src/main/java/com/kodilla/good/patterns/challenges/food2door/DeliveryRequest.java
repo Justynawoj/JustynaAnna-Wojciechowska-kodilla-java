@@ -5,17 +5,19 @@ import java.util.HashMap;
 
 public class DeliveryRequest {
 
-    DeliveryProvider deliveryProvider;
-    LocalDateTime orderDate;
-    Product product;
+    private DeliveryProvider deliveryProvider;
+    private LocalDateTime orderDate;
+    private Product product;
+    private int quantity;
 
     private int deliveryNumber = 1;
     private static int nextDeliveryNumber = 1;
 
-    public DeliveryRequest(DeliveryProvider deliveryProvider, LocalDateTime orderDate, Product product, int deliveryNumber) {
+    public DeliveryRequest(DeliveryProvider deliveryProvider, LocalDateTime orderDate, Product product, int quantity) {
         this.deliveryProvider = deliveryProvider;
         this.orderDate = orderDate;
         this.product = product;
+        this.quantity = quantity;
         this.deliveryNumber = deliveryNumber;
     }
 

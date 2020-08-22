@@ -1,4 +1,4 @@
 package com.kodilla.good.patterns.challenges.food2door;
 
-public class DeliveryService {
+public interface DeliveryService {
 }

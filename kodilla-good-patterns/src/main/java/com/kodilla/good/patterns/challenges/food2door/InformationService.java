@@ -1,5 +1,7 @@
 package com.kodilla.good.patterns.challenges.food2door;
 
-public class InformationService {
+public interface InformationService {
+
+    void inform(DeliveryProvider deliveryProvider);
 
 }
