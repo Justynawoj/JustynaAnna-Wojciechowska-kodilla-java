@@ -1,8 +1,8 @@
 package com.kodilla.good.patterns.challenges.allegro;
 
 public class OrderDto {
-    public User user;
-    public boolean isOrdered;
+    private  User user;
+    private boolean isOrdered;
 
     public User getUser() {
         return user;

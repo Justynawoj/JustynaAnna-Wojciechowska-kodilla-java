@@ -1,4 +1,15 @@
 package com.kodilla.good.patterns.challenges.allegro;
 
-public class ProductOrderService implements OrderService{
+import java.util.HashMap;
+
+public class ProductOrderService implements OrderService {
+
+    @Override
+    public boolean makeOrder(User user, HashMap<Product, Integer> mapOfProducts) {
+        /**
+         * checking stock
+         */
+        return true;
+    }
 }
+

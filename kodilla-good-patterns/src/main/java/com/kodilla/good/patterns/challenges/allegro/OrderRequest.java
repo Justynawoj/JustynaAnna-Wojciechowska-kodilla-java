@@ -6,17 +6,18 @@ import java.util.HashMap;
 
 public class OrderRequest {
 
-    User user;
-    LocalDateTime orderDate;
-    HashMap<Product, Integer> productsOrderedAndQuantity;
+    private User user;
+    private LocalDateTime orderDate;
+    private HashMap<Product, Integer> productsOrderedAndQuantity;
     private int orderNumber = 1;
     private static int nextOrderNumber = 1;
 
     public OrderRequest(User user, LocalDateTime orderDate,
                         HashMap<Product, Integer> productsOrderedAndQuantity) {
         this.user = user;
+        this.orderDate = orderDate;
         this.productsOrderedAndQuantity = productsOrderedAndQuantity;
-        orderNumber = nextOrderNumber++;
+        this.orderNumber = nextOrderNumber++;
     }
 
     public User getUser() {
@@ -31,4 +32,5 @@ public class OrderRequest {
     public int getOrderNumber() {
         return orderNumber;
     }
+
 }

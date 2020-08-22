@@ -1,10 +1,10 @@
 package com.kodilla.good.patterns.challenges.allegro;
 
 public class User {
-    String name;
-    String surname;
-    String email;
-    String address;
+    private String name;
+    private String surname;
+    private String email;
+    private String address;
 
     public User(String name, String surname, String email, String address) {
         this.name = name;
