@@ -36,7 +36,7 @@ class MovieStore {
                 .flatMap(Collection::stream)
                 .collect(Collectors.joining("!"));
 
-        System.out.println(movies+"!");
+        System.out.println(movies);
     }
 }
 
