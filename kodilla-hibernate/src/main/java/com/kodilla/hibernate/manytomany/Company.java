@@ -1,7 +1,5 @@
 package com.kodilla.hibernate.manytomany;
 
-import org.springframework.data.jpa.repository.Query;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
@@ -10,7 +8,7 @@ import java.util.List;
         name = "Company.retrieveCompaniesWithFirstLettersNameEqualsTo",
         query = "SELECT * FROM COMPANIES" +
                 " WHERE LEFT(COMPANY_NAME, 3) = :FIRSTLETTERS",
-        resultClass = Employee.class
+        resultClass = Company.class
 )
 @Entity
 @Table(name = "COMPANIES")

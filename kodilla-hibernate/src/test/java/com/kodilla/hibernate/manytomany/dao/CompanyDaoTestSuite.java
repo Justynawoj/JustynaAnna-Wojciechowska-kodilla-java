@@ -9,11 +9,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.List;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class CompanyDaoTestSuite {
     @Autowired
     CompanyDao companyDao;
+
+    @Autowired
+    EmployeeDao employeeDao;
 
     @Test
     public void testSaveManyToMany(){
@@ -65,26 +70,105 @@ public class CompanyDaoTestSuite {
     public void testRetrieveCompaniesWithFirstLettersNameEqualsTo(){
 
         //Given
+        Employee johnSmith = new Employee("John", "Smith");
+        Employee stephanieClarckson = new Employee("Stephanie", "Clarckson");
+        Employee lindaKovalsky = new Employee("Linda", "Kovalsky");
 
-        //When
+        Company softwareMachine = new Company("Software Machine");
+        Company dataMaesters = new Company("Data Maesters");
+        Company greyMatter = new Company("Grey Matter");
+
+        softwareMachine.getEmployees().add(johnSmith);
+        dataMaesters.getEmployees().add(stephanieClarckson);
+        dataMaesters.getEmployees().add(lindaKovalsky);
+        greyMatter.getEmployees().add(johnSmith);
+        greyMatter.getEmployees().add(lindaKovalsky);
+
+        johnSmith.getCompanies().add(softwareMachine);
+        johnSmith.getCompanies().add(greyMatter);
+        stephanieClarckson.getCompanies().add(dataMaesters);
+        lindaKovalsky.getCompanies().add(dataMaesters);
+        lindaKovalsky.getCompanies().add(greyMatter);
+
+        companyDao.save(softwareMachine);
+        int softwareMachineId = softwareMachine.getId();
+        companyDao.save(dataMaesters);
+        int dataMaestersId = dataMaesters.getId();
+        companyDao.save(greyMatter);
+        int greyMatterId = greyMatter.getId();
+
+
+        String firstLetters = "Sof";
+        String someLetters = "aaa";
+
+         //When
+        List<Company> sofCompanies = companyDao.retrieveCompaniesWithFirstLettersNameEqualsTo(firstLetters);
+        List<Company> randomCompanyName = companyDao.retrieveCompaniesWithFirstLettersNameEqualsTo(someLetters);
 
         //Then
+        Assert.assertNotEquals(0,sofCompanies.size());
+        Assert.assertEquals(0,randomCompanyName.size());
 
         //CleanUp
-
+        try {
+            companyDao.deleteById(softwareMachineId);
+            companyDao.deleteById(dataMaestersId);
+            companyDao.deleteById(greyMatterId);
+        } catch (Exception e) {
+            //do nothing
+        }
     }
 
     @Test
     public void testRetrieveEmployeesWithLastnameEqualsTo(){
 
         //Given
+        Employee johnSmith = new Employee("John", "Smith");
+        Employee stephanieClarckson = new Employee("Stephanie", "Clarckson");
+        Employee lindaKovalsky = new Employee("Linda", "Kovalsky");
+
+        Company softwareMachine = new Company("Software Machine");
+        Company dataMaesters = new Company("Data Maesters");
+        Company greyMatter = new Company("Grey Matter");
+
+        softwareMachine.getEmployees().add(johnSmith);
+        dataMaesters.getEmployees().add(stephanieClarckson);
+        dataMaesters.getEmployees().add(lindaKovalsky);
+        greyMatter.getEmployees().add(johnSmith);
+        greyMatter.getEmployees().add(lindaKovalsky);
+
+        johnSmith.getCompanies().add(softwareMachine);
+        johnSmith.getCompanies().add(greyMatter);
+        stephanieClarckson.getCompanies().add(dataMaesters);
+        lindaKovalsky.getCompanies().add(dataMaesters);
+        lindaKovalsky.getCompanies().add(greyMatter);
+
+        companyDao.save(softwareMachine);
+        int softwareMachineId = softwareMachine.getId();
+        companyDao.save(dataMaesters);
+        int dataMaestersId = dataMaesters.getId();
+        companyDao.save(greyMatter);
+        int greyMatterId = greyMatter.getId();
+
+        String lastname ="Smith";
+        String randomLastname = "Nowak";
 
         //When
+        List<Employee> retrievedSmithEmployees = employeeDao.retrieveEmployeesWithLastnameEqualsTo(lastname);
+        List<Employee> retrievedNowakEmployees = employeeDao.retrieveEmployeesWithLastnameEqualsTo(randomLastname);
 
         //Then
+        Assert.assertNotEquals(0,retrievedSmithEmployees.size());
+        Assert.assertEquals(0,retrievedNowakEmployees.size());
 
         //CleanUp
-
+        try {
+            companyDao.deleteById(softwareMachineId);
+            companyDao.deleteById(dataMaestersId);
+            companyDao.deleteById(greyMatterId);
+        } catch (Exception e) {
+            //do nothing
+        }
     }
 
 }
