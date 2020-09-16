@@ -1,19 +1,22 @@
-package com.kodilla.good.patterns.challenges.allegro;
+package com.kodilla.good.patterns.challenges.allegro.order;
 
+
+import com.kodilla.good.patterns.challenges.allegro.models.Product;
+import com.kodilla.good.patterns.challenges.allegro.models.User;
 
 import java.time.LocalDateTime;
-import java.util.HashMap;
+import java.util.Map;
 
 public class OrderRequest {
 
-    private User user;
-    private LocalDateTime orderDate;
-    private HashMap<Product, Integer> productsOrderedAndQuantity;
-    private int orderNumber = 1;
     private static int nextOrderNumber = 1;
+    private final User user;
+    private final LocalDateTime orderDate;
+    private final Map<Product, Integer> productsOrderedAndQuantity;
+    private int orderNumber;
 
     public OrderRequest(User user, LocalDateTime orderDate,
-                        HashMap<Product, Integer> productsOrderedAndQuantity) {
+                        Map<Product, Integer> productsOrderedAndQuantity) {
         this.user = user;
         this.orderDate = orderDate;
         this.productsOrderedAndQuantity = productsOrderedAndQuantity;
@@ -26,7 +29,7 @@ public class OrderRequest {
     public LocalDateTime getOrderDate() {
         return orderDate;
     }
-    public HashMap<Product, Integer> getProductsOrderedAndQuantity() {
+    public Map<Product, Integer> getProductsOrderedAndQuantity() {
         return productsOrderedAndQuantity;
     }
     public int getOrderNumber() {

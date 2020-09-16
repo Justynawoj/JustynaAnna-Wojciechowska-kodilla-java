@@ -1,10 +1,13 @@
-package com.kodilla.good.patterns.challenges.allegro;
+package com.kodilla.good.patterns.challenges.allegro.order;
+
+import com.kodilla.good.patterns.challenges.allegro.services.InformationService;
+import com.kodilla.good.patterns.challenges.allegro.services.OrderService;
 
 public class OrderProcessor {
 
-    private InformationService informationService;
-    private OrderService orderService;
-    private OrderRepository orderRepository;
+    private final InformationService informationService;
+    private final OrderService orderService;
+    private final OrderRepository orderRepository;
 
     public OrderProcessor(final InformationService informationService,
                            final OrderService orderService,
@@ -15,7 +18,7 @@ public class OrderProcessor {
     }
 
     public OrderDto process(final OrderRequest orderRequest) {
-        boolean isOrdered = orderService.makeOrder(orderRequest.getUser(), orderRequest.getProductsOrderedAndQuantity());
+        boolean isOrdered = orderService.makeOrder(orderRequest);
 
         if(isOrdered) {
             informationService.inform(orderRequest.getUser());

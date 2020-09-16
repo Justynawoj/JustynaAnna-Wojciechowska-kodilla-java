@@ -1,4 +1,4 @@
-package com.kodilla.good.patterns.challenges.allegro;
+package com.kodilla.good.patterns.challenges.allegro.order;
 
 import java.util.HashMap;
 import java.util.Map;
