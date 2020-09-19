@@ -1,4 +1,4 @@
-package com.kodilla.good.patterns.challenges.allegro.order;
+package com.kodilla.good.patterns.challenges.allegro.orders;
 
 import com.kodilla.good.patterns.challenges.allegro.models.User;
 

@@ -1,4 +1,4 @@
-package com.kodilla.good.patterns.challenges.allegro.order;
+package com.kodilla.good.patterns.challenges.allegro.orders;
 
 
 import com.kodilla.good.patterns.challenges.allegro.models.Product;
@@ -15,7 +15,8 @@ public class OrderRequest {
     private final Map<Product, Integer> productsOrderedAndQuantity;
     private int orderNumber;
 
-    public OrderRequest(User user, LocalDateTime orderDate,
+    public OrderRequest(User user,
+                        LocalDateTime orderDate,
                         Map<Product, Integer> productsOrderedAndQuantity) {
         this.user = user;
         this.orderDate = orderDate;

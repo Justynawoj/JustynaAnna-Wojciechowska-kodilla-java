@@ -1,11 +1,11 @@
-package com.kodilla.good.patterns.challenges.allegro.order;
+package com.kodilla.good.patterns.challenges.allegro.orders;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class OrderRepository {
 
-    Map<Integer, OrderRequest> ordersHistory = new HashMap<>();
+    private final Map<Integer, OrderRequest> ordersHistory = new HashMap<>();
 
     public void saveOrderInHistory(OrderRequest orderRequest){
         int orderNumber = orderRequest.getOrderNumber();

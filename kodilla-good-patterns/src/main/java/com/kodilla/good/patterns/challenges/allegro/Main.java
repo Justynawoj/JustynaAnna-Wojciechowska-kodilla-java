@@ -1,9 +1,9 @@
 package com.kodilla.good.patterns.challenges.allegro;
 
-import com.kodilla.good.patterns.challenges.allegro.order.OrderProcessor;
-import com.kodilla.good.patterns.challenges.allegro.order.OrderRepository;
-import com.kodilla.good.patterns.challenges.allegro.order.OrderRequest;
-import com.kodilla.good.patterns.challenges.allegro.order.OrderRequestRetriever;
+import com.kodilla.good.patterns.challenges.allegro.orders.OrderProcessor;
+import com.kodilla.good.patterns.challenges.allegro.orders.OrderRepository;
+import com.kodilla.good.patterns.challenges.allegro.orders.OrderRequest;
+import com.kodilla.good.patterns.challenges.allegro.orders.OrderRequestRetriever;
 import com.kodilla.good.patterns.challenges.allegro.services.EmailService;
 import com.kodilla.good.patterns.challenges.allegro.services.ProductOrderService;
 
