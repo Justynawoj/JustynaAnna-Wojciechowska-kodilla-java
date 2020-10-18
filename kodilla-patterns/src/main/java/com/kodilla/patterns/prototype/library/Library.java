@@ -10,7 +10,6 @@ public final class Library extends Prototype {
     private Set<Book> books = new HashSet<>();
 
 
-
     public Library(final String name) {
         this.name = name;
     }
