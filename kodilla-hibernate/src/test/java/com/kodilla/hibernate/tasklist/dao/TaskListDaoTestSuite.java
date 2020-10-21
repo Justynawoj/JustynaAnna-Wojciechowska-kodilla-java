@@ -115,7 +115,7 @@ public class TaskListDaoTestSuite {
         List<Task> durationLongerThanTasks = taskDao.retrieveTasksWithDurationLongerThan(6);
 
         //Then
-   /*     try {
+        try {
             Assert.assertEquals(1, longTasks.size());
             Assert.assertEquals(3, shortTasks.size());
             Assert.assertEquals(3, enoughTimeTasks.size());
@@ -123,7 +123,7 @@ public class TaskListDaoTestSuite {
         } finally {
             //CleanUp
             taskListDao.deleteById(id);
-        }*/
+        }
     }
 
 }
