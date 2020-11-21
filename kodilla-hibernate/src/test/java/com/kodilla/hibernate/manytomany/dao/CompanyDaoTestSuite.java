@@ -64,6 +64,7 @@ public class CompanyDaoTestSuite {
         } catch (Exception e) {
             //do nothing
         }
+
     }
 
     @Test
@@ -169,6 +170,7 @@ public class CompanyDaoTestSuite {
         } catch (Exception e) {
             //do nothing
         }
+
     }
 
 }
