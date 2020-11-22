@@ -4,12 +4,21 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
-@NamedNativeQuery(
-        name = "Company.retrieveCompaniesWithFirstLettersNameEqualsTo",
+@NamedNativeQueries({
+        @NamedNativeQuery(
+                name = "Company.retrieveCompaniesWithFirstLettersNameEqualsTo",
+                query = "SELECT * FROM COMPANIES" +
+                        " WHERE LEFT(COMPANY_NAME, 3) = :FIRSTLETTERS",
+                resultClass = Company.class
+        ),
+        @NamedNativeQuery(
+        name = "Company.findCompaniesThatNameContainsLetters",
         query = "SELECT * FROM COMPANIES" +
-                " WHERE LEFT(COMPANY_NAME, 3) = :FIRSTLETTERS",
-        resultClass = Company.class
-)
+                " WHERE COMPANY_NAME LIKE CONCAT('%',:NAME,'%')",
+                resultClass = Company.class
+        )
+})
+
 @Entity
 @Table(name = "COMPANIES")
 public class Company {
@@ -19,6 +28,7 @@ public class Company {
 
     public Company() {
     }
+
 
     public Company(String name) {
         this.name = name;
