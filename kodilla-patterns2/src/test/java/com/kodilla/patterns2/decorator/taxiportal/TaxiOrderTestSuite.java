@@ -1,4 +1,4 @@
-package com.kodilla.patterns2.decator.taxiportal;
+package com.kodilla.patterns2.decorator.taxiportal;
 
 import org.junit.Assert;
 import org.junit.Test;
