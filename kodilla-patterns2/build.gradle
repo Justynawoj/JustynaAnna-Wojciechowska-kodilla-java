@@ -20,6 +20,7 @@ dependencies {
 //    testImplementation 'junit:junit:4.13'
 //    implementation 'junit:junit:4.13'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    compile('org.springframework.boot:spring-boot-starter-aop')
 }
 
 test {
