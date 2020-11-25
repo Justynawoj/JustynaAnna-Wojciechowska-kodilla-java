@@ -9,9 +9,9 @@ public class Mentor implements Observer{
     }
 
     @Override
-    public void update(Homework homework) {
-        System.out.println(name + " you have new homework to check: Homework no. " +
-                homework.getNumber() + " - "+ homework.getDescription());
+    public void update(Student student, int homeworkNumber) {
+        System.out.println(name + " you have new homework to check added by your student " +
+                student.getName() + ". Homework to check: "+ homeworkNumber);
         count++;
     }
 }

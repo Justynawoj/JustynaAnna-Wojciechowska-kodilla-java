@@ -15,19 +15,24 @@ public class HomeworkTestSuite {
 
         Mentor mentor1 = new Mentor("John");
         Mentor mentor2 = new Mentor("Rossie");
+        Mentor mentor3 = new Mentor("Sue");
 
-        homework1.getObservers().add(mentor1);
-        homework1.getObservers().add(mentor2);
-        homework2.getObservers().add(mentor2);
+
 
         //When
-        homework1.addStudent(student1);
-        homework2.addStudent(student2);
-        homework1.addStudent(student2);
+
+        student1.registerObserver(mentor1);
+        student1.registerObserver(mentor2);
+        student2.registerObserver(mentor2);
+
+        student1.addNewHomeworkToList(homework1);
+        student2.addNewHomeworkToList(homework1);
+        student2.addNewHomeworkToList(homework2);
 
         //Then
-        assertEquals(2,mentor1.count);
+        assertEquals(1,mentor1.count);
         assertEquals(3,mentor2.count);
+        assertEquals(0,mentor3.count);
 
 
 
