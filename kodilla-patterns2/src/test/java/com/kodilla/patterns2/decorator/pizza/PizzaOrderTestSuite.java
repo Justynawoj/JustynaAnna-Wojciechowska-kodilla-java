@@ -1,6 +1,5 @@
 package com.kodilla.patterns2.decorator.pizza;
 
-
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -11,7 +10,6 @@ public class PizzaOrderTestSuite {
     public void testBasicPizzaOrderGetCost(){
         //Given
         PizzaOrder pizzaOrder = new BasicPizzaOrder();
-
         //When
         BigDecimal cost = pizzaOrder.getCost();
         //Then
@@ -21,7 +19,6 @@ public class PizzaOrderTestSuite {
     public void testBasicPizzaOrderGetDescription(){
         //Given
         PizzaOrder pizzaOrder = new BasicPizzaOrder();
-
         //When
         String description = pizzaOrder.getDescription();
         //Then
@@ -33,7 +30,6 @@ public class PizzaOrderTestSuite {
         //Given
         PizzaOrder pizzaOrder = new BasicPizzaOrder();
         pizzaOrder = new ExtraCheese(pizzaOrder);
-
         //When
         BigDecimal cost = pizzaOrder.getCost();
         //Then
