@@ -6,7 +6,7 @@ import java.util.List;
 public class Student implements Observable{
     private String name;
     private List<Homework> doneHomeworkList;
-    List<Observer> observers;
+    private List<Observer> observers;
 
     public Student(String name) {
         this.name = name;
@@ -27,7 +27,6 @@ public class Student implements Observable{
     public void registerObserver(Observer observer) {
         observers.add(observer);
     }
-
 
     @Override
     public void notifyObservers(int homeworkNumber) {

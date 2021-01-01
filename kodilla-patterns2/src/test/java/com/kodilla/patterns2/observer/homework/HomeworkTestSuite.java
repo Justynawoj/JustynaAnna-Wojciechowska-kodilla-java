@@ -7,8 +7,8 @@ public class HomeworkTestSuite {
     @Test
     public void testUpdate(){
         //Given
-        Student student1 = new Student("mike");
-        Student student2 = new Student("jess");
+        Student student1 = new Student("Mike");
+        Student student2 = new Student("Jess");
 
         Homework homework1 = new Homework(20,"some descr");
         Homework homework2 = new Homework(22,"some descr 22");
@@ -17,10 +17,7 @@ public class HomeworkTestSuite {
         Mentor mentor2 = new Mentor("Rossie");
         Mentor mentor3 = new Mentor("Sue");
 
-
-
         //When
-
         student1.registerObserver(mentor1);
         student1.registerObserver(mentor2);
         student2.registerObserver(mentor2);
@@ -30,11 +27,8 @@ public class HomeworkTestSuite {
         student2.addNewHomeworkToList(homework2);
 
         //Then
-        assertEquals(1,mentor1.count);
-        assertEquals(3,mentor2.count);
-        assertEquals(0,mentor3.count);
-
-
-
+        assertEquals(1,mentor1.getCount());
+        assertEquals(3,mentor2.getCount());
+        assertEquals(0,mentor3.getCount());
     }
 }
