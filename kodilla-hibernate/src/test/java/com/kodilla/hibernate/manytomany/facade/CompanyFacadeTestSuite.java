@@ -31,8 +31,6 @@ public class CompanyFacadeTestSuite {
         Employee stephanieClarckson = new Employee("Stephanie", "Clarckson");
         Employee lindaKovalsky = new Employee("Linda", "Kovalsky");
 
-        johnSmith.getId();
-
         //When
         List<Employee> SmithFirstLetters = companyFacade.findEmployeesThatNameContainsLetters("Smi");
         List<Employee> SmithMiddleLetters = companyFacade.findEmployeesThatNameContainsLetters("mit");

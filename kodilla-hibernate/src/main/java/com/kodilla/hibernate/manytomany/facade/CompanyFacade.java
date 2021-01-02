@@ -13,10 +13,10 @@ import java.util.List;
 public final class CompanyFacade {
 
     @Autowired
-    EmployeeDao employeeDao;
+    private EmployeeDao employeeDao;
 
     @Autowired
-    CompanyDao companyDao;
+    private CompanyDao companyDao;
 
     public List<Company> findCompaniesThatNameContainsLetters(String name){
         return companyDao.findCompaniesThatNameContainsLetters(name);
