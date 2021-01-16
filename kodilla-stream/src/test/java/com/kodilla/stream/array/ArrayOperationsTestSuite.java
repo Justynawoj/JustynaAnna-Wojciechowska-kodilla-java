@@ -9,14 +9,14 @@ import static com.kodilla.stream.array.ArrayOperations.getAverage;
 public class ArrayOperationsTestSuite {
 
     @Test
-    public void testGetAverage(){
+    public void testGetAverage() {
         //Given
-        int[] numbers = {5,10};
+        int[] numbers = {5, 10};
 
         //When
         double result = getAverage(numbers);
 
         //Then
-        Assert.assertEquals(7.5,result,0.00001);
+        Assert.assertEquals(7.5, result, 0.00001);
     }
 }

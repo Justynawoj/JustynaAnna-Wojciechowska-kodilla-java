@@ -21,7 +21,7 @@ public class CompanyDaoTestSuite {
     EmployeeDao employeeDao;
 
     @Test
-    public void testSaveManyToMany(){
+    public void testSaveManyToMany() {
         //Given
         Employee johnSmith = new Employee("John", "Smith");
         Employee stephanieClarckson = new Employee("Stephanie", "Clarckson");
@@ -68,7 +68,7 @@ public class CompanyDaoTestSuite {
     }
 
     @Test
-    public void testRetrieveCompaniesWithFirstLettersNameEqualsTo(){
+    public void testRetrieveCompaniesWithFirstLettersNameEqualsTo() {
 
         //Given
         Employee johnSmith = new Employee("John", "Smith");
@@ -102,13 +102,13 @@ public class CompanyDaoTestSuite {
         String firstLetters = "Sof";
         String someLetters = "aaa";
 
-         //When
+        //When
         List<Company> sofCompanies = companyDao.retrieveCompaniesWithFirstLettersNameEqualsTo(firstLetters);
         List<Company> randomCompanyName = companyDao.retrieveCompaniesWithFirstLettersNameEqualsTo(someLetters);
 
         //Then
-        Assert.assertNotEquals(0,sofCompanies.size());
-        Assert.assertEquals(0,randomCompanyName.size());
+        Assert.assertNotEquals(0, sofCompanies.size());
+        Assert.assertEquals(0, randomCompanyName.size());
 
         //CleanUp
         try {
@@ -121,7 +121,7 @@ public class CompanyDaoTestSuite {
     }
 
     @Test
-    public void testRetrieveEmployeesWithLastnameEqualsTo(){
+    public void testRetrieveEmployeesWithLastnameEqualsTo() {
 
         //Given
         Employee johnSmith = new Employee("John", "Smith");
@@ -151,7 +151,7 @@ public class CompanyDaoTestSuite {
         companyDao.save(greyMatter);
         int greyMatterId = greyMatter.getId();
 
-        String lastname ="Smith";
+        String lastname = "Smith";
         String randomLastname = "Nowak";
 
         //When
@@ -159,8 +159,8 @@ public class CompanyDaoTestSuite {
         List<Employee> retrievedNowakEmployees = employeeDao.retrieveEmployeesWithLastnameEqualsTo(randomLastname);
 
         //Then
-        Assert.assertNotEquals(0,retrievedSmithEmployees.size());
-        Assert.assertEquals(0,retrievedNowakEmployees.size());
+        Assert.assertNotEquals(0, retrievedSmithEmployees.size());
+        Assert.assertEquals(0, retrievedNowakEmployees.size());
 
         //CleanUp
         try {

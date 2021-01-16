@@ -8,11 +8,11 @@ public class CompanySalariesProcessor implements SalaryProcessor {
     public BigDecimal calculateSalaries(List<Employee> employees) {
         BigDecimal sum = BigDecimal.ZERO;
 
-        for (Employee employee: employees) {
+        for (Employee employee : employees) {
             System.out.println(employee);
             sum = sum.add(employee.getBaseSalary());
         }
-        System.out.println("total salaries:"+ sum);
+        System.out.println("total salaries:" + sum);
         return sum;
     }
 }

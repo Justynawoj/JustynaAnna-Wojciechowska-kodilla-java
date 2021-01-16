@@ -89,8 +89,9 @@ public class TaxiOrderTestSuite {
         //Then
         Assert.assertEquals("Drive a course + child seat by MyTaxi Network", description);
     }
+
     @Test
-    public void testUberWithTwoChildSeatGetCost(){
+    public void testUberWithTwoChildSeatGetCost() {
         //Given
         TaxiOrder taxiOrder = new BasicTaxiOrder();
         taxiOrder = new UberNetworkOrderDecorator(taxiOrder);
@@ -103,8 +104,9 @@ public class TaxiOrderTestSuite {
         //Then
         Assert.assertEquals(new BigDecimal(29), cost);
     }
+
     @Test
-    public void testUberWithTwoChildSeatGetDescription(){
+    public void testUberWithTwoChildSeatGetDescription() {
         //Given
         TaxiOrder taxiOrder = new BasicTaxiOrder();
         taxiOrder = new UberNetworkOrderDecorator(taxiOrder);
@@ -117,8 +119,9 @@ public class TaxiOrderTestSuite {
         //Then
         Assert.assertEquals("Drive a course by Uber Network + child seat + child seat", descripion);
     }
+
     @Test
-    public void testVipTaxiWithChildSeatExpressGetCost(){
+    public void testVipTaxiWithChildSeatExpressGetCost() {
         //Given
         TaxiOrder taxiOrder = new BasicTaxiOrder();
         taxiOrder = new TaxiNetworkOrderDecorator(taxiOrder);
@@ -130,8 +133,9 @@ public class TaxiOrderTestSuite {
         //Then
         Assert.assertEquals(new BigDecimal(52), cost);
     }
+
     @Test
-    public void testVipTaxiWithChildSeatExpressGetDescription(){
+    public void testVipTaxiWithChildSeatExpressGetDescription() {
         //Given
         TaxiOrder taxiOrder = new BasicTaxiOrder();
         taxiOrder = new TaxiNetworkOrderDecorator(taxiOrder);

@@ -6,10 +6,10 @@ import org.junit.Test;
 public class BigmacTestSuite {
 
     @Test
-    public void testBigmacBuilder(){
+    public void testBigmacBuilder() {
 
         //Given
-        Bigmac bigmac =  new Bigmac.BigmacBuilder()
+        Bigmac bigmac = new Bigmac.BigmacBuilder()
                 .bun("bun")
                 .sauce("barbecue")
                 .ingredients("cebula")
@@ -21,6 +21,6 @@ public class BigmacTestSuite {
 
         //When
         int howManyIngredients = bigmac.getIngedients().size();
-        Assert.assertEquals(2,howManyIngredients);
+        Assert.assertEquals(2, howManyIngredients);
     }
 }

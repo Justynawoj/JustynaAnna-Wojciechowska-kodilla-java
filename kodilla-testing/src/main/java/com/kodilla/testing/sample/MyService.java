@@ -10,7 +10,7 @@ public class MyService {
         this.otherService = otherService;
     }
 
-    int doSth(int i){
+    int doSth(int i) {
         int j = myRepository.save();
 
         int result = j + i;
@@ -18,16 +18,16 @@ public class MyService {
         return result;
     }
 
-    int doSthElse(){
+    int doSthElse() {
         return otherService.methodA() + otherService.methodB();
     }
 
-    void sendDataToExternalService(String input){
+    void sendDataToExternalService(String input) {
 
         /**
          *
          */
-        input = input+"123";
+        input = input + "123";
         /***
          *
          */

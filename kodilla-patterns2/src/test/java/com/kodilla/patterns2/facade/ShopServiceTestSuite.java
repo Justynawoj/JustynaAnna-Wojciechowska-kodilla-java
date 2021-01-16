@@ -11,8 +11,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 
-
-
 import java.math.BigDecimal;
 
 
@@ -69,15 +67,15 @@ public class ShopServiceTestSuite {
     }
 
     @Test
-    public void testShopFacade(){
+    public void testShopFacade() {
         OrderDto order = new OrderDto();
 
-        order.addItem(new ItemDto(10L,2));
-        order.addItem(new ItemDto(21L,1));
-        order.addItem(new ItemDto(13L,1));
+        order.addItem(new ItemDto(10L, 2));
+        order.addItem(new ItemDto(21L, 1));
+        order.addItem(new ItemDto(13L, 1));
 
         try {
-            orderFacade.processOrder(order,1L);
+            orderFacade.processOrder(order, 1L);
         } catch (OrderProcessingException e) {
             // should be handled in here
         }

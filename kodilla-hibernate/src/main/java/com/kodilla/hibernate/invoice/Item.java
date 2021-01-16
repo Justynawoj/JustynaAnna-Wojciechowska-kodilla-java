@@ -20,6 +20,7 @@ public class Item {
         this.quantity = quantity;
         this.value = value;
     }
+
     public Item() {
     }
 
@@ -41,10 +42,12 @@ public class Item {
     public BigDecimal getPrice() {
         return price;
     }
+
     @Column(name = "QUANTITY")
     public int getQuantity() {
         return quantity;
     }
+
     @Column(name = "VALUE")
     public BigDecimal getValue() {
         return value;

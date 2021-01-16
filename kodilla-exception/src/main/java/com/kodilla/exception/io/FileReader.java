@@ -11,15 +11,15 @@ public class FileReader {
     public void readFile() throws FileReaderException {
 
         ClassLoader classLoader = getClass().getClassLoader();
-        try{
-        File file = new File(classLoader.getResource("file/na!mes.txt").getFile());
+        try {
+            File file = new File(classLoader.getResource("file/na!mes.txt").getFile());
 
-        Stream<String> fileLines = Files.lines(Paths.get(file.getPath()));
+            Stream<String> fileLines = Files.lines(Paths.get(file.getPath()));
             fileLines.forEach(System.out::println);
 
-        }catch (Exception e) {
+        } catch (Exception e) {
             throw new FileReaderException();
-        }finally {
+        } finally {
             System.out.println("Im am gonna be here... always");
         }
     }

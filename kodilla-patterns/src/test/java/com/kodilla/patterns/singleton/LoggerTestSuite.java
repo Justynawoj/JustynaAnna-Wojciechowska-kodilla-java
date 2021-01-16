@@ -25,7 +25,7 @@ Przed wzorcem singleton
     //////////////////////////////////
     //Po wprowadzeniu wzorca singleton
     @Test
-    public void getLastLogTest(){
+    public void getLastLogTest() {
 
         //Given
         //When
@@ -33,6 +33,6 @@ Przed wzorcem singleton
 
         //Then
         String lastLog = Logger.getInstance().getLastLog();
-        Assert.assertEquals("5554fd",lastLog);
+        Assert.assertEquals("5554fd", lastLog);
     }
 }

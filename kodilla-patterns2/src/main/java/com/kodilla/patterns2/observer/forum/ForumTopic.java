@@ -3,7 +3,7 @@ package com.kodilla.patterns2.observer.forum;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ForumTopic implements Observable{
+public class ForumTopic implements Observable {
     private final List<Observer> observers;
     private final List<String> messages;
     private final String name;
@@ -13,7 +13,8 @@ public class ForumTopic implements Observable{
         messages = new ArrayList<>();
         this.name = name;
     }
-    public void addPost(String post){
+
+    public void addPost(String post) {
         messages.add(post);
         notifyObservers();
     }
@@ -25,7 +26,7 @@ public class ForumTopic implements Observable{
 
     @Override
     public void notifyObservers() {
-        for (Observer observer:observers) {
+        for (Observer observer : observers) {
             observer.updade(this);
         }
     }

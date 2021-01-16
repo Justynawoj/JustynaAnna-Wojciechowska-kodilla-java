@@ -63,12 +63,12 @@ public class Bigmac {
                 throw new IllegalStateException("Wrong type of sauce");
             }
 
-            if(ingredients.size()==0){
+            if (ingredients.size() == 0) {
                 throw new IllegalStateException("No ingredient chosen");
             }
             for (String chosenIngedient : ingredients) {
                 if (!availableIngredients.contains(chosenIngedient)) {
-                    throw new IllegalStateException("No such ingredient: "+ chosenIngedient);
+                    throw new IllegalStateException("No such ingredient: " + chosenIngedient);
                 }
             }
             return new Bigmac(bun, sauce, burgers, ingredients);

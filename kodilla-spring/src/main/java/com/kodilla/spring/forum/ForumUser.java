@@ -10,7 +10,7 @@ public class ForumUser {
         return userName;
     }
 
-    public ForumUser(){
+    public ForumUser() {
         this.userName = "John Smith";
     }
 }

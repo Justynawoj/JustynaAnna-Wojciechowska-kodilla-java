@@ -19,9 +19,9 @@ public class Order {
         this.userId = userId;
     }
 
-    public BigDecimal calculateValue(){
+    public BigDecimal calculateValue() {
         BigDecimal sum = BigDecimal.ZERO;
-        for(Item item : items){
+        for (Item item : items) {
             sum = sum.add(productService.getPrice(item.getProductId())
                     .multiply(new BigDecimal(item.getQty())));
         }

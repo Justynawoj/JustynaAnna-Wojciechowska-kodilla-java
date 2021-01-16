@@ -10,7 +10,6 @@ public final class Library extends Prototype {
     private Set<Book> books = new HashSet<>();
 
 
-
     public Library(final String name) {
         this.name = name;
     }
@@ -27,8 +26,8 @@ public final class Library extends Prototype {
         return books;
     }
 
-    public Library shallowCopy() throws CloneNotSupportedException{
-        return (Library)super.clone();
+    public Library shallowCopy() throws CloneNotSupportedException {
+        return (Library) super.clone();
     }
 
 
@@ -37,8 +36,8 @@ public final class Library extends Prototype {
         Library newLibrary = shallowCopy();
         newLibrary.books = new HashSet<>();
 
-        for(Book theOriginalBook: books){
-            Book clonedBook = new Book(theOriginalBook.getTitle(),theOriginalBook.getAuthor(),theOriginalBook.getPublicationDate());
+        for (Book theOriginalBook : books) {
+            Book clonedBook = new Book(theOriginalBook.getTitle(), theOriginalBook.getAuthor(), theOriginalBook.getPublicationDate());
             newLibrary.getBooks().add(clonedBook);
         }
 

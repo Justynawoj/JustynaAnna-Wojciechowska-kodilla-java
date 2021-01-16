@@ -8,24 +8,24 @@ public class StatisticCounter {
     private double commentsPerUser;
     private double commentsPerPost;
 
-    public void calculateAdvStatistics(Statistics statistics){
+    public void calculateAdvStatistics(Statistics statistics) {
         this.usersNumber = statistics.usersNames().size();
         this.totalPosts = statistics.postsCount();
         this.totalComments = statistics.commentsCount();
-        if(usersNumber != 0) {
+        if (usersNumber != 0) {
             this.postPerUser = totalPosts / usersNumber;
-        }else{
+        } else {
             this.postPerUser = 0;
         }
 
         if (usersNumber != 0) {
             this.commentsPerUser = totalComments / usersNumber;
-           }else {
+        } else {
             this.commentsPerUser = 0;
-            }
-        if(totalPosts!=0){
+        }
+        if (totalPosts != 0) {
             this.commentsPerPost = totalComments / totalPosts;
-        }else{
+        } else {
             this.commentsPerPost = 0;
         }
     }

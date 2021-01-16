@@ -75,22 +75,23 @@ public class BookDirectoryTestSuite {
     }
 
     @Test
-    public void testListBooksInHandsOf0(){
+    public void testListBooksInHandsOf0() {
         // Given
-        LibraryUser noBooksUser = new LibraryUser("John", "Farmer","1425653");
+        LibraryUser noBooksUser = new LibraryUser("John", "Farmer", "1425653");
         List<Book> listOfNoBooks = generateListOfNBooks(0);
         when(libraryDatabaseMock.listBooksInHandsOf(noBooksUser)).thenReturn(listOfNoBooks);
 
         // When
         List<Book> zeroBooks = bookLibrary.listBookInHandsOf(noBooksUser);
         // Then
-        assertEquals(0,zeroBooks.size());
+        assertEquals(0, zeroBooks.size());
 
     }
+
     @Test
-    public void testListBooksInHandsOf1(){
+    public void testListBooksInHandsOf1() {
         // Given
-        LibraryUser oneBookUser = new LibraryUser("One", "Book","1425653");
+        LibraryUser oneBookUser = new LibraryUser("One", "Book", "1425653");
         List<Book> listOf1Book = generateListOfNBooks(1);
         when(libraryDatabaseMock.listBooksInHandsOf(oneBookUser)).thenReturn(listOf1Book);
 
@@ -98,13 +99,13 @@ public class BookDirectoryTestSuite {
         List<Book> oneBook = bookLibrary.listBookInHandsOf(oneBookUser);
 
         // Then
-        assertEquals(1,oneBook.size());
+        assertEquals(1, oneBook.size());
     }
 
     @Test
-    public void testListBooksInHandsOf5(){
+    public void testListBooksInHandsOf5() {
         // Given
-        LibraryUser fiveBooksUser = new LibraryUser("Five", "Books","1425653");
+        LibraryUser fiveBooksUser = new LibraryUser("Five", "Books", "1425653");
         List<Book> listOf5Books = generateListOfNBooks(5);
         when(libraryDatabaseMock.listBooksInHandsOf(fiveBooksUser)).thenReturn(listOf5Books);
 
@@ -112,12 +113,12 @@ public class BookDirectoryTestSuite {
         List<Book> fiveBooks = bookLibrary.listBookInHandsOf(fiveBooksUser);
 
         // Then
-        assertEquals(5,fiveBooks.size());
+        assertEquals(5, fiveBooks.size());
     }
 
     private List<Book> generateListOfNBooks(int booksQuantity) {
         List<Book> resultList = new ArrayList<Book>();
-        for(int n = 1; n <= booksQuantity; n++){
+        for (int n = 1; n <= booksQuantity; n++) {
             Book theBook = new Book("Title " + n, "Author " + n, 1970 + n);
             resultList.add(theBook);
         }

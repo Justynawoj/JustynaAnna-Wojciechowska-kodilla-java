@@ -7,34 +7,34 @@ import org.junit.Test;
 
 public class SettingsFileEngineTestSuite {
 
-  //  private static SettingsFileEngine settingsFileEngine;
+    //  private static SettingsFileEngine settingsFileEngine;
 
     @BeforeClass
-    public static void openSettingsFile(){
+    public static void openSettingsFile() {
 
         SettingsFileEngine.getInstance().open("myapp.settings");
 
     }
 
     @AfterClass
-    public static void closeSettingsFile(){
+    public static void closeSettingsFile() {
         SettingsFileEngine.getInstance().close();
     }
 
     @Test
-    public void testGetFileName(){
+    public void testGetFileName() {
         //Given
         //When
 
         String fileName = SettingsFileEngine.getInstance().getFileName();
-        System.out.println("Opened: "+ fileName);
+        System.out.println("Opened: " + fileName);
 
         //Then
-        Assert.assertEquals("myapp.settings",fileName);
+        Assert.assertEquals("myapp.settings", fileName);
     }
 
     @Test
-    public void testLoadedSettings(){
+    public void testLoadedSettings() {
         //Given
         //When
         boolean result = SettingsFileEngine.getInstance().loadSettings();
@@ -43,7 +43,7 @@ public class SettingsFileEngineTestSuite {
     }
 
     @Test
-    public void testSaveSettings(){
+    public void testSaveSettings() {
         //Given
         //When
         boolean result = SettingsFileEngine.getInstance().saveSettings();

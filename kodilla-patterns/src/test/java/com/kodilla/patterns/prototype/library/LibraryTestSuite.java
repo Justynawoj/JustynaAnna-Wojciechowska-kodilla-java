@@ -8,14 +8,14 @@ import java.time.LocalDate;
 public class LibraryTestSuite {
 
     @Test
-    public void testGetBooks(){
+    public void testGetBooks() {
 
         //Given
         Library library = new Library("novels");
 
-        Book book1 = new Book("Short novel I","J.J",LocalDate.of(2020,5,5));
-        Book book2 = new Book("Short novel II","J.J",LocalDate.of(2020,5,15));
-        Book book3 = new Book("Short novel III","J.J",LocalDate.of(2020,5,25));
+        Book book1 = new Book("Short novel I", "J.J", LocalDate.of(2020, 5, 5));
+        Book book2 = new Book("Short novel II", "J.J", LocalDate.of(2020, 5, 15));
+        Book book3 = new Book("Short novel III", "J.J", LocalDate.of(2020, 5, 25));
 
         library.getBooks().add(book1);
         library.getBooks().add(book2);

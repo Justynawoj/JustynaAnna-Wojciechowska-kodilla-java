@@ -24,7 +24,7 @@ public class StatisticCounterTest {
         int userNamesNumber = statisticCounter.getUsersNumber();
 
         //Then
-        Assert.assertEquals(0,userNamesNumber);
+        Assert.assertEquals(0, userNamesNumber);
     }
 
     @Test
@@ -32,7 +32,7 @@ public class StatisticCounterTest {
 
         //Given
         ArrayList<String> usersNames100 = new ArrayList<>();
-        for(int i=0; i<100;i++){
+        for (int i = 0; i < 100; i++) {
             usersNames100.add("user");
         }
         when(statisticsMock.usersNames()).thenReturn(usersNames100);
@@ -42,8 +42,9 @@ public class StatisticCounterTest {
         int userNamesNumber = statisticCounter.getUsersNumber();
 
         //Then
-        Assert.assertEquals(100,userNamesNumber);
+        Assert.assertEquals(100, userNamesNumber);
     }
+
     @Test
     public void calculateAdvStatisticsTestPostQuantity0() {
 
@@ -55,8 +56,9 @@ public class StatisticCounterTest {
         double posts = statisticCounter.getTotalPosts();
 
         //Then
-        Assert.assertEquals(0,posts,0);
+        Assert.assertEquals(0, posts, 0);
     }
+
     @Test
     public void calculateAdvStatisticsTestPostQuantity1000() {
 
@@ -68,8 +70,9 @@ public class StatisticCounterTest {
         double posts = statisticCounter.getTotalPosts();
 
         //Then
-        Assert.assertEquals(1000,posts,0);
+        Assert.assertEquals(1000, posts, 0);
     }
+
     @Test
     public void calculateAdvStatisticsTestCommentsQuantity0() {
 
@@ -81,8 +84,9 @@ public class StatisticCounterTest {
         double posts = statisticCounter.getTotalComments();
 
         //Then
-        Assert.assertEquals(0,posts,0);
+        Assert.assertEquals(0, posts, 0);
     }
+
     @Test
     public void calculateAdvStatisticsTestCommentsPerPost1() {
 
@@ -95,8 +99,9 @@ public class StatisticCounterTest {
         double posts = statisticCounter.getCommentsPerPost();
 
         //Then
-        Assert.assertEquals(0.1,posts,0);
+        Assert.assertEquals(0.1, posts, 0);
     }
+
     @Test
     public void calculateAdvStatisticsTestCommentsPerPost2() {
 
@@ -109,12 +114,13 @@ public class StatisticCounterTest {
         double posts = statisticCounter.getCommentsPerPost();
 
         //Then
-        Assert.assertEquals(100,posts,0);
+        Assert.assertEquals(100, posts, 0);
     }
+
     @Test
     public void calculateAdvStatisticsTestPostPerUser() {
         ArrayList<String> usersNames100 = new ArrayList<>();
-        for(int i=0; i<100;i++){
+        for (int i = 0; i < 100; i++) {
             usersNames100.add("user");
         }
         //Given
@@ -126,12 +132,13 @@ public class StatisticCounterTest {
         double postPerUser = statisticCounter.getPostPerUser();
 
         //Then
-        Assert.assertEquals(0.01,postPerUser,0);
+        Assert.assertEquals(0.01, postPerUser, 0);
     }
+
     @Test
     public void calculateAdvStatisticsTestCommentsPerUser() {
         ArrayList<String> usersNames100 = new ArrayList<>();
-        for(int i=0; i<100;i++){
+        for (int i = 0; i < 100; i++) {
             usersNames100.add("user");
         }
         //Given
@@ -143,6 +150,6 @@ public class StatisticCounterTest {
         double postPerUser = statisticCounter.getCommentsPerUser();
 
         //Then
-        Assert.assertEquals(0.01,postPerUser,0);
+        Assert.assertEquals(0.01, postPerUser, 0);
     }
 }

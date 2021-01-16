@@ -11,7 +11,7 @@ public class SalaryAdapter extends SalaryAdaptee implements SalaryCalculator {
     @Override
     public double TotalSalary(String[][] workers, double[] salaries) {
         List<Employee> employeeList = new ArrayList<>();
-        for (int i = 0; i < salaries.length; i++){
+        for (int i = 0; i < salaries.length; i++) {
             employeeList.add(new Employee(
                     workers[i][0],
                     workers[i][1],

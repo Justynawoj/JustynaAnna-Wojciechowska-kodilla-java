@@ -24,12 +24,12 @@ public class StoredProcTestSuite {
         //Then
         String sqlCheckTable = "SELECT COUNT(*) AS HOW_MANY FROM READERS WHERE VIP_LEVEL=\"Not set\"";
         ResultSet rs = statement.executeQuery(sqlCheckTable);
-        int howMany =-1;
-        if(rs.next()){
+        int howMany = -1;
+        if (rs.next()) {
             howMany = rs.getInt("HOW_MANY");
         }
 
-        Assert.assertEquals(0,howMany);
+        Assert.assertEquals(0, howMany);
     }
 
 }

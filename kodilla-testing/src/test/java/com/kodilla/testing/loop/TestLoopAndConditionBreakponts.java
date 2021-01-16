@@ -6,14 +6,14 @@ import org.junit.Test;
 public class TestLoopAndConditionBreakponts {
 
     @Test
-    public void testLoop(){
+    public void testLoop() {
         //Given
         long sum = 0;
         int i;
         //When
-        for( i = 0; i<1000; i++){
+        for (i = 0; i < 1000; i++) {
             sum += i;
-            System.out.println("["+i+"] Sum equals: "+ sum);
+            System.out.println("[" + i + "] Sum equals: " + sum);
         }
 
         //Then

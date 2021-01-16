@@ -1,11 +1,12 @@
 package com.kodilla.patterns2.observer.forum;
 
 import org.junit.Test;
+
 import static org.junit.Assert.assertEquals;
 
 public class ForumUserTestSuite {
     @Test
-    public void testUpdate(){
+    public void testUpdate() {
         //Given
         ForumTopic javaHelpForum = new JavaHelpForumTopic();
         ForumTopic javaToolsForum = new JavaToolsForumTopic();
@@ -27,7 +28,7 @@ public class ForumUserTestSuite {
         javaToolsForum.addPost("you are fool");
 
         //Then
-        assertEquals(3,johnSmith.getUpdateCount());
+        assertEquals(3, johnSmith.getUpdateCount());
         assertEquals(2, ivoneEscobar.getUpdateCount());
         assertEquals(5, jessiePinkman.getUpdateCount());
 

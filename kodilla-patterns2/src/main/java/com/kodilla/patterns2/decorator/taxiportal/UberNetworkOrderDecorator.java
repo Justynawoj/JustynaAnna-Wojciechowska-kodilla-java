@@ -2,8 +2,8 @@ package com.kodilla.patterns2.decorator.taxiportal;
 
 import java.math.BigDecimal;
 
-public class UberNetworkOrderDecorator extends AbstractTaxiOrderDecorator{
-    public UberNetworkOrderDecorator(TaxiOrder taxiOrder){
+public class UberNetworkOrderDecorator extends AbstractTaxiOrderDecorator {
+    public UberNetworkOrderDecorator(TaxiOrder taxiOrder) {
         super(taxiOrder);
     }
 
@@ -15,6 +15,6 @@ public class UberNetworkOrderDecorator extends AbstractTaxiOrderDecorator{
 
     @Override
     public String getDescription() {
-        return super.getDescription()+" by Uber Network";
+        return super.getDescription() + " by Uber Network";
     }
 }

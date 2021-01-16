@@ -110,7 +110,7 @@ public class ShopService {
         return false;
     }
 
-    public void cancelOrder(Long orderId){
+    public void cancelOrder(Long orderId) {
         Iterator<Order> orderIterator = orders.stream()
                 .filter(order -> order.getOrderId().equals(orderId))
                 .iterator();

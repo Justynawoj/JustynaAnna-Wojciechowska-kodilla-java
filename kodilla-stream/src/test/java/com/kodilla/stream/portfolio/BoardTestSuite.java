@@ -2,11 +2,13 @@ package com.kodilla.stream.portfolio;
 
 import org.junit.Assert;
 import org.junit.Test;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.time.temporal.ChronoUnit;
 import java.util.OptionalDouble;
+
 import static java.util.stream.Collectors.toList;
 
 public class BoardTestSuite {
@@ -81,6 +83,7 @@ public class BoardTestSuite {
         //Then
         Assert.assertEquals(3, project.getTaskLists().size());
     }
+
     @Test
     public void testAddTaskListFindUsersTasks() {
         //Given
@@ -116,6 +119,7 @@ public class BoardTestSuite {
         Assert.assertEquals(1, tasks.size());
         Assert.assertEquals("HQLs for analysis", tasks.get(0).getTitle());
     }
+
     @Test
     public void testAddTaskListFindLongTasks() {
         //Given
@@ -134,8 +138,9 @@ public class BoardTestSuite {
         //Then
         Assert.assertEquals(2, longTasks);
     }
+
     @Test
-    public void testAddTaskListAverageWorkingOnTask(){
+    public void testAddTaskListAverageWorkingOnTask() {
         //Given
         Board project = prepareTestData();
 
@@ -145,12 +150,12 @@ public class BoardTestSuite {
         OptionalDouble optionalDouble = project.getTaskLists().stream()
                 .filter(inProgressTasks::contains)
                 .flatMap(tl -> tl.getTasks().stream())
-                .map(t-> ChronoUnit.DAYS.between(t.getCreated(), LocalDate.now()))
+                .map(t -> ChronoUnit.DAYS.between(t.getCreated(), LocalDate.now()))
                 .mapToDouble(Long::longValue).average();
 
         double result = optionalDouble.getAsDouble();
 
         //Then
-        Assert.assertEquals(10.0, result,0.00001);
+        Assert.assertEquals(10.0, result, 0.00001);
     }
 }

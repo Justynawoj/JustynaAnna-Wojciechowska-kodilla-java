@@ -12,7 +12,7 @@ public class User {
         return userName;
     }
 
-    public void sharePost(){
+    public void sharePost() {
         this.socialPublisher.showSocial();
     }
 

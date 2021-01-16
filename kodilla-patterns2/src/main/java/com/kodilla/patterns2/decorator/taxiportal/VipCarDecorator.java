@@ -3,7 +3,7 @@ package com.kodilla.patterns2.decorator.taxiportal;
 import java.math.BigDecimal;
 
 public class VipCarDecorator extends AbstractTaxiOrderDecorator {
-    public VipCarDecorator(TaxiOrder taxiOrder){
+    public VipCarDecorator(TaxiOrder taxiOrder) {
         super(taxiOrder);
     }
 
@@ -14,6 +14,6 @@ public class VipCarDecorator extends AbstractTaxiOrderDecorator {
 
     @Override
     public String getDescription() {
-        return super.getDescription()+ " variant VIP";
+        return super.getDescription() + " variant VIP";
     }
 }

@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 public class FlightFinder {
 
-    public boolean findFlight(Flight flight) throws RouteNotFoundException{
+    public boolean findFlight(Flight flight) throws RouteNotFoundException {
 
         HashMap<String, Boolean> flights = new HashMap<>();
         flights.put("WRO", true);
@@ -16,12 +16,12 @@ public class FlightFinder {
         flights.put("KLP", false);
 
         Boolean departureAirportAvailable = flights.get(flight.getDepartureAirport());
-        if(departureAirportAvailable == null){
+        if (departureAirportAvailable == null) {
             throw new RouteNotFoundException();
         }
 
         Boolean arrivalAirportAvailable = flights.get(flight.getArrivalAirport());
-        if(arrivalAirportAvailable == null){
+        if (arrivalAirportAvailable == null) {
             throw new RouteNotFoundException();
         }
 

@@ -2,6 +2,7 @@ package com.kodilla.stream.world;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -9,15 +10,15 @@ import org.junit.Test;
 public class WorldTestSuite {
 
     @Test
-    public void testMethod(){
+    public void testMethod() {
 
         //Given
-        Country poland = new Country("10000000000","Polska");
+        Country poland = new Country("10000000000", "Polska");
         Country germany = new Country("10000000000000", "Deutchland");
-        Country italy = new Country("10000000","Italia");
+        Country italy = new Country("10000000", "Italia");
 
-        Country indie = new Country("1000000","India");
-        Country russia = new Country("100000000","Russoa");
+        Country indie = new Country("1000000", "India");
+        Country russia = new Country("100000000", "Russoa");
 
         Continent europe = new Continent();
 

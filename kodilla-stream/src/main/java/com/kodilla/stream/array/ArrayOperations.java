@@ -5,13 +5,13 @@ import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
 
 interface ArrayOperations {
-    static double getAverage(int[] numbers){
+    static double getAverage(int[] numbers) {
 
-        IntStream.range(0,numbers.length)
+        IntStream.range(0, numbers.length)
                 .map(n -> numbers[n])
                 .forEach(System.out::println);
 
-        OptionalDouble optionalDouble = IntStream.range(0,numbers.length)
+        OptionalDouble optionalDouble = IntStream.range(0, numbers.length)
                 .map(n -> numbers[n])
                 .average();
         return optionalDouble.getAsDouble();

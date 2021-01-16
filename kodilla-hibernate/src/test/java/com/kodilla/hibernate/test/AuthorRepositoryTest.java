@@ -21,7 +21,7 @@ public class AuthorRepositoryTest extends TestCase {
     BookRepository bookRepository;
 
     @Test
-    public void sample(){
+    public void sample() {
 
         //Given
         Author author = new Author();
@@ -40,7 +40,7 @@ public class AuthorRepositoryTest extends TestCase {
 
         //When
         Optional<Author> authorOptional = authorRepository.findById(author.getId());
-        
+
         //Then
         System.out.println();
     }

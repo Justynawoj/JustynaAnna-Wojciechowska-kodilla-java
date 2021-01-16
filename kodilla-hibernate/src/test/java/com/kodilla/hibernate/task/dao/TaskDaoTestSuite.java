@@ -21,12 +21,12 @@ public class TaskDaoTestSuite {
     private static final String DESCRIPTION = "Test: Learn Hibernate";
 
     @Test
-    public void testTaskDaoSave(){
+    public void testTaskDaoSave() {
 
         //Given
-        Task task = new Task(DESCRIPTION,7);
+        Task task = new Task(DESCRIPTION, 7);
 
-       //When
+        //When
 
         taskDao.save(task);
 
@@ -62,10 +62,10 @@ public class TaskDaoTestSuite {
 
 
     @Test
-    public void testTaskDaoSaveWithFinancialDetails(){
+    public void testTaskDaoSaveWithFinancialDetails() {
 
         //Given
-        Task task = new Task(DESCRIPTION,30);
+        Task task = new Task(DESCRIPTION, 30);
         task.setTaskFinancialDetails(new TaskFinancialDetails(new BigDecimal(120), false));
 
         //When
@@ -73,7 +73,7 @@ public class TaskDaoTestSuite {
         int id = task.getId();
 
         //Then
-        Assert.assertNotEquals(0,id);
+        Assert.assertNotEquals(0, id);
 
         //CleanUp
         taskDao.deleteById(id);

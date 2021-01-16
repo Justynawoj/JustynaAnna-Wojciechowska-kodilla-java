@@ -2,8 +2,8 @@ package com.kodilla.patterns2.decorator.taxiportal;
 
 import java.math.BigDecimal;
 
-public class TaxiNetworkOrderDecorator extends AbstractTaxiOrderDecorator{
-    public TaxiNetworkOrderDecorator(TaxiOrder taxiOrder){
+public class TaxiNetworkOrderDecorator extends AbstractTaxiOrderDecorator {
+    public TaxiNetworkOrderDecorator(TaxiOrder taxiOrder) {
         super(taxiOrder);
     }
 

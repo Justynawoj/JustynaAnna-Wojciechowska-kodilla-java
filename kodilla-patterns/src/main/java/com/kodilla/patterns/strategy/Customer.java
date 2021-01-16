@@ -8,10 +8,11 @@ public class Customer {
         this.name = name;
     }
 
-    public String predict(){
+    public String predict() {
         return buyPredictor.predictWhatToBuy();
     }
-    public void setBuyingStrategy(BuyPredictor buyPredictor){
+
+    public void setBuyingStrategy(BuyPredictor buyPredictor) {
         this.buyPredictor = buyPredictor;
     }
 }
